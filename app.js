@@ -77,3 +77,28 @@ testArray2.push("false");
 //here its location index 2 and replacing 0 items in the array
 testArray2.splice(2, 0, "Me");
 
+// 8. Map allows you to create a copy of an array or object and perform a function on it
+function allStrings(element){
+    return(element.toString());
+}
+var testArray2ToString = testArray2.map(allStrings);
+
+// 9. Filter allows you to isolate items that satisfy a particular criteria in an array
+function stringFilter(element){
+    return(element == "255");
+}
+var testArray2FilterString = testArray2ToString.filter(stringFilter);
+
+// You can have a method in an object 
+
+var profileInfo = {
+    firstName: "Gerald", 
+    lastName: "Kenechukwu", 
+    age: 79, 
+    notSick: true, 
+    getStatus: function(){
+        return(this.firstName + " " + this.lastName + " is healthy")
+    }
+};
+//Calling this method with the bracket would run it, without it, it shows the definition.
+profileInfo.getStatus();
